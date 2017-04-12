@@ -2,7 +2,7 @@
 include('../config.php'); 
 if (isset($_POST['submitted'])) { 
 foreach($_POST AS $key => $value) { $_POST[$key] = mysqli_real_escape_string($link, $value); } 
-$sql = "INSERT INTO `Designers` (`Designer_pasport_number` ,`Surname` ,  `Name` ,  `Father_name` ,  `Salary` ,  `Email` ,  `Email`  ) VALUES( '{$_POST['Designer_pasport_number']}', '{$_POST['Surname']}' ,  '{$_POST['Name']}' ,  '{$_POST['Father_name']}' ,  '{$_POST['Salary']}' ,  '{$_POST['Gender']}' ,  '{$_POST['Email']}'  ) "; 
+$sql = "INSERT INTO `Designers` (`Designer_pasport_number` ,`Surname` ,  `Name` ,  `Father_name` ,  `Salary` ,  `Gender` ,  `Email`  ) VALUES( '{$_POST['Designer_pasport_number']}', '{$_POST['Surname']}' ,  '{$_POST['Name']}' ,  '{$_POST['Father_name']}' ,  '{$_POST['Salary']}' ,  '{$_POST['Gender']}' ,  '{$_POST['Email']}'  ) "; 
 mysqli_query($link, $sql) or die(mysqli_error($link)); 
 echo "Added row.<br />"; 
 echo "<a href='list.php'>Back To Listing</a>"; 
