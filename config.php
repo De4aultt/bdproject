@@ -1,5 +1,6 @@
 <header>
-    <meta charset = UTF-8>
+    <meta charset ='UTF-8'>
+    <a></a>
 </header>
 <a href="../index.php"><p><b>Головна сторінка</b><br /></a>
 <br>
