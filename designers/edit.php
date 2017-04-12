@@ -4,7 +4,7 @@ if (isset($_GET['Designer_pasport_number']) ) {
 $Designer_pasport_number = (int) $_GET['Designer_pasport_number']; 
 if (isset($_POST['submitted'])) { 
 foreach($_POST AS $key => $value) { $_POST[$key] = mysqli_real_escape_string($link,$value); } 
-$sql = "UPDATE `Designers` SET  `Surname` =  '{$_POST['Surname']}' ,  `Name` =  '{$_POST['Name']}' ,  `Father_name` =  '{$_POST['Father_name']}' ,  `Salary` =  '{$_POST['Salary']}' ,  `Father_name` =  '{$_POST['Gender']}' ,  `Salary` =  '{$_POST['Email']}'  WHERE `Designer_pasport_number` = '$Designer_pasport_number' "; 
+$sql = "UPDATE `Designers` SET  `Surname` =  '{$_POST['Surname']}' ,  `Name` =  '{$_POST['Name']}' ,  `Father_name` =  '{$_POST['Father_name']}' ,  `Salary` =  '{$_POST['Salary']}' ,  `Gender` =  '{$_POST['Gender']}' ,  `Email` =  '{$_POST['Email']}'  WHERE `Designer_pasport_number` = '$Designer_pasport_number' "; 
 mysqli_query($link, $sql) or die(mysqli_error($link)); 
 echo (mysqli_affected_rows($link)) ? "Edited row.<br />" : "Nothing changed. <br />"; 
 echo "<a href='list.php'>Back To Listing</a>"; 
