@@ -1,13 +1,13 @@
 <header>
     <meta charset ='UTF-8'>
-    <a></a>
+    
 </header>
 <a href="../index.php"><p><b>Головна сторінка</b><br /></a>
 <br>
 <?php
 
 //$link = mysqli_connect("", "", "", "bd_project");
-//$link->set_charset("utf8");
+
 
 $connectstr_dbhost = '';
 $connectstr_dbname = '';
@@ -33,3 +33,5 @@ if (!$link) {
     echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
     exit;
 }
+
+$link->set_charset("utf8");
