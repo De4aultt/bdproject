@@ -14,7 +14,7 @@ $connectstr_dbusername = '';
 $connectstr_dbpassword = '';
 
 foreach ($_SERVER as $key => $value) {
-    if (strpos($key, "MYSQLCONNSTR_bd_project") !== 0) {
+    if (strpos($key, "MYSQLCONNSTR_localbd") !== 0) {
         continue;
     }
     
