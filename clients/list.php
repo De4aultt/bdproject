@@ -10,7 +10,7 @@ echo "<td><b>Birthday</b></td>";
 echo "<td><b>Gender</b></td>"; 
 echo "<td><b>Manager Pasport Number</b></td>"; 
 echo "</tr>"; 
-$result = mysqli_query($link, "SELECT * FROM `Clients`") or trigger_error(mysql_error()); 
+$result = mysqli_query($link, "SELECT * FROM `clients`") or trigger_error(mysql_error()); 
 while($row = mysqli_fetch_array($result)){ 
 foreach($row AS $key => $value) { $row[$key] = stripslashes($value); } 
 echo "<tr>";  
