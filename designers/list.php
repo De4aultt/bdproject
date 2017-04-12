@@ -25,4 +25,4 @@ echo "<td valign='top'><a href=edit.php?Designer_pasport_number={$row['Designer_
 echo "</tr>"; 
 } 
 echo "</table>"; 
-echo "<a href=new.php>New Row</a>"; 
+echo "<a href=new.php>Новий запис</a>"; 

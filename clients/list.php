@@ -25,7 +25,7 @@ echo "<td valign='top'><a href=edit.php?Client_Number={$row['Client_Number']}>Ed
 echo "</tr>"; 
 } 
 echo "</table>"; 
-echo "<a href=new.php>New Row</a>"; 
+echo "<a href=new.php>Новий запис</a>"; 
 
 
 //echo("start");

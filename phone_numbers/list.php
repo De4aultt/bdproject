@@ -19,4 +19,4 @@ echo "<td valign='top'><a href=edit.php?Phone_number_id={$row['Phone_number_id']
 echo "</tr>"; 
 } 
 echo "</table>"; 
-echo "<a href=new.php>New Row</a>"; 
+echo "<a href=new.php>Новий запис</a>"; 

@@ -23,4 +23,4 @@ echo "<td valign='top'><a href=edit.php?Picture_id={$row['Picture_id']}>Edit</a>
 echo "</tr>"; 
 } 
 echo "</table>"; 
-echo "<a href=new.php>New Row</a>"; 
+echo "<a href=new.php>Новий запис</a>"; 
