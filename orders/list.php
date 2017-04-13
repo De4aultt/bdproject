@@ -1,15 +1,23 @@
 <?php
 include('../config.php'); 
+
+$order_by = "Order_id";
+if (isset($_GET['Order_by'])){
+    $order_by = $_GET['Order_by'];
+}
+$myquery = "SELECT * FROM `Orders` ORDER BY `Orders`.`$order_by` ASC";
+
+
 echo "<table border=1 >"; 
 echo "<tr>"; 
-echo "<td><b>Order Id</b></td>"; 
-echo "<td><b>Order Date</b></td>"; 
-echo "<td><b>Town</b></td>"; 
-echo "<td><b>Street</b></td>"; 
-echo "<td><b>House</b></td>"; 
-echo "<td><b>Manager Pasport Number</b></td>"; 
+echo "<td><b><a href=list.php?Order_by=Order_id>Order Id</a></b></td>"; 
+echo "<td><b><a href=list.php?Order_by=Order_Date>Order Date</a></b></td>"; 
+echo "<td><b><a href=list.php?Order_by=Town>Town</a></b></td>"; 
+echo "<td><b><a href=list.php?Order_by=Street>Street</a></b></td>"; 
+echo "<td><b><a href=list.php?Order_by=House>House</a></b></td>"; 
+echo "<td><b><a href=list.php?Order_by=Manager_pasport_number>Manager Pasport Number</a></b></td>"; 
 echo "</tr>"; 
-$result = mysqli_query($link, "SELECT * FROM `Orders`") or trigger_error(mysqli_error($link)); 
+$result = mysqli_query($link, $myquery) or trigger_error(mysqli_error($link)); 
 while($row = mysqli_fetch_array($result)){ 
 foreach($row AS $key => $value) { $row[$key] = stripslashes($value); } 
 echo "<tr>";  

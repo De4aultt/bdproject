@@ -1,5 +1,6 @@
 <?php 
-if(true){
+
+
 $connectstr_dbhost = '';
 $connectstr_dbname = '';
 $connectstr_dbusername = '';
@@ -18,19 +19,18 @@ foreach ($_SERVER as $key => $value) {
 
 $link = mysqli_connect($connectstr_dbhost, $connectstr_dbusername, $connectstr_dbpassword,$connectstr_dbname);
 
-$link->set_charset("utf8");
 if (!$link) {
     echo "Error: Unable to connect to MySQL." . PHP_EOL;
     echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
     echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
     exit;
 }
-}
-else{
-require("constants.php");
 
-$con = mysql_connect(DB_SERVER,DB_USER, DB_PASS) or die(mysql_error());
-	mysql_select_db(DB_NAME) or die("Cannot select DB");
-	
-}
+
+
+
+//$link = mysqli_connect("localhost", "root", "", "bdis_project");
+
+
+
 	?>

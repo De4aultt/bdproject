@@ -1,12 +1,8 @@
 <?php
-error_reporting(E_ALL); ini_set('display_errors', 1);
+
 session_start();
 include 'includes/header.php';
 include 'acsess_roots.php';
-?>
-
-<?php
-//$link = mysqli_connect("localhost", "root", "", "bd_project");
 
 
 $connectstr_dbhost = '';
@@ -34,7 +30,9 @@ if (!$link) {
     exit;
 }
 
-$link->set_charset("utf8");	
+//$link = mysqli_connect("localhost", "root", "", "bdis_project");
+
+	
 ?>
 
 

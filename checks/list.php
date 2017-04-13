@@ -1,14 +1,22 @@
 <?php
 include('../config.php'); 
+
+$order_by = "Chek_number";
+if (isset($_GET['Order_by'])){
+    $order_by = $_GET['Order_by'];
+}
+$myquery = "SELECT * FROM `Cheks` ORDER BY `Cheks`.`$order_by` ASC";
+
+
 echo "<table border=1 >"; 
 echo "<tr>"; 
-echo "<td><b>Chek Number</b></td>"; 
-echo "<td><b>Count</b></td>"; 
-echo "<td><b>Total Price</b></td>"; 
-echo "<td><b>Picture Number</b></td>"; 
-echo "<td><b>Order Number</b></td>"; 
+echo "<td><b><a href=list.php?Order_by=Chek_number>Chek Number</a></b></td>"; 
+echo "<td><b><a href=list.php?Order_by=Count>Count</a></b></td>"; 
+echo "<td><b><a href=list.php?Order_by=Total_price>Total Price</a></b></td>"; 
+echo "<td><b><a href=list.php?Order_by=Picture_number>Picture Number</a></b></td>"; 
+echo "<td><b><a href=list.php?Order_by=Order_number>Order Number</a></b></td>"; 
 echo "</tr>"; 
-$result = mysqli_query($link, "SELECT * FROM `Cheks`") or trigger_error(mysqli_error($link)); 
+$result = mysqli_query($link, $myquery) or trigger_error(mysqli_error($link)); 
 while($row = mysqli_fetch_array($result)){ 
 foreach($row AS $key => $value) { $row[$key] = stripslashes($value); } 
 echo "<tr>";  

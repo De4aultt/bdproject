@@ -18,7 +18,7 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
     $username=$_POST['username'];
     $password=$_POST['password'];
 
-    $query =mysqli_query($link, "SELECT * FROM usertbl WHERE username='".$username."' AND password='".$password."'");
+    $query=mysqli_query($link, "SELECT * FROM usertbl WHERE username='".$username."' AND password='".$password."'");
 
     $numrows=mysqli_num_rows($query);
     if($numrows!=0)

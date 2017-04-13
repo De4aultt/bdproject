@@ -1,5 +1,6 @@
 <?php
 require_once 'config.php';
+
 ?>
 <h1>Майстерня картин:</h1>
 <a href="checks/list.php"><p><b>Чеки</b><br /></a>
