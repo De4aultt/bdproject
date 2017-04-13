@@ -39,7 +39,7 @@ $link->set_charset("utf8");
 
 <?php
 
-if(isset($_SESSION["session_username"])){
+if(isset($_SESSION["session_username"]) && $_SESSION["session_username"] == "1"){
 echo "<div id='right'>Вітаю, ";
 echo $_SESSION['session_username']; 
 echo " <a href='../logout.php'>Вийти </a></div>";
@@ -66,6 +66,7 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
     {
     $dbusername=$row['username'];
     $dbpassword=$row['password'];
+    $dbposition=$row['positon'];
     }
 
     if($username == $dbusername && $password == $dbpassword)
@@ -75,7 +76,7 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
 // old placement
 //    session_start();
     $_SESSION['session_username']=$username;
-
+    $_SESSION['position']=$dbposition;
     /* Redirect browser */
     header("Location: intropage.php");
     }
