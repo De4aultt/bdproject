@@ -1,3 +1,4 @@
+<?php $link->set_charset("utf8"); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
