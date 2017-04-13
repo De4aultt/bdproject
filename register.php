@@ -16,8 +16,8 @@ if(!empty($_POST['full_name']) && !empty($_POST['position']) && !empty($_POST['e
 	
 
 		
-	$query=mysql_query("SELECT * FROM usertbl WHERE username='".$username."'");
-	$numrows=mysql_num_rows($query);
+	$query=mysqli_query($link, "SELECT * FROM usertbl WHERE username='".$username."'");
+	$numrows=mysql_num_rows($link, $query);
 	
 	if($numrows==0)
 	{
@@ -25,7 +25,7 @@ if(!empty($_POST['full_name']) && !empty($_POST['position']) && !empty($_POST['e
 			(full_name, position, email, username,password) 
 			VALUES('$full_name', '$position','$email', '$username', '$password')";
 
-	$result=mysql_query($sql);
+	$result=mysqli_query($link, $sql);
 
 
 	if($result){
