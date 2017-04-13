@@ -73,7 +73,7 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
     {
     $dbusername=$row['username'];
     $dbpassword=$row['password'];
-    $dbposition=$row['positon'];
+    $dbposition=$row['position'];
     }
 
     if($username == $dbusername && $password == $dbpassword)
