@@ -39,10 +39,17 @@ $link->set_charset("utf8");
 
 <?php
 
-if(isset($_SESSION["session_username"]) && $_SESSION["session_username"] == "1"){
+if(isset($_SESSION["session_username"])){
 echo "<div id='right'>Вітаю, ";
 echo $_SESSION['session_username']; 
 echo " <a href='../logout.php'>Вийти </a></div>";
+}
+
+else if ($_SESSION["position"] != "1"){
+    echo "<h1>Ваша посада '";
+    echo $_SESSION["position"];
+    echo "' не має доступу до даної категорії!</h1>";
+    exit();
 }
 
 else{
