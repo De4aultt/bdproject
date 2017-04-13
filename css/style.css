@@ -164,8 +164,8 @@ margin-top: 20px;
     padding: 5px; /* Поля вокруг текста */
     margin-bottom: 5px; /* Отступ снизу */
    }
-   #left { text-align: left; width: 50%;}
-   #right { text-align: right; width: 50%;}
+   #left { text-align: left; width: 50%; display: inline-block;}
+   #right { text-align: right; width: 50%; display: inline-block;}
    #center { text-align: center; }
    .content {
     width: 75%; /* Ширина слоя */
