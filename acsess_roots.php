@@ -4,7 +4,7 @@ $designer_pages = "pictures";
 $home = "index.php";
 
 if(isset($_SESSION["session_username"])){
-echo "<div id='right'>Вітаю, ";
+echo "<div id='left'>Вітаю, ";
 echo $_SESSION['session_username']; 
 echo " <a href='../logout.php'>Вийти </a></div>";
 
