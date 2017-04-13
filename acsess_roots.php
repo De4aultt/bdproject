@@ -8,7 +8,7 @@ $designer_pages = array("http://bdproject.azurewebsites.net/index.php",
     );
 
 
-if(isset($_SESSION["session_username"]) && (in_array(strval($_SESSION["session_position"]), $positions))){
+if(isset($_SESSION["session_username"])){
 echo "<div id='right'>Вітаю, ";
 echo $_SESSION['session_username']; 
 echo " <a href='../logout.php'>Вийти </a></div>";
@@ -20,7 +20,7 @@ function getUrl() {
   return $url;
 }    
  $current_page = getUrl();
- if (strval($_SESSION["session_position"]) == "Дизайнер" && !(in_array(strval($current_page), $designer_pages))){
+ if ( !(in_array(strval($_SESSION["session_position"]), $positions)) || strval($_SESSION["session_position"]) == "Дизайнер" && !(in_array(strval($current_page), $designer_pages))){
     echo "<h1>Ваша посада '";
     echo $_SESSION["session_position"];
     echo "' не має доступу до даної категорії!</h1>";
