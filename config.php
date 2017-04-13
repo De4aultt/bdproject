@@ -1,12 +1,11 @@
-<header>
-    <meta charset ='UTF-8'>
-    
-</header>
-<a href="../index.php"><p><b>Головна сторінка</b><br /></a>
-<br>
 <?php
+error_reporting(E_ALL); ini_set('display_errors', 1);
+session_start();
+include 'includes/header.php';
+?>
 
-//$link = mysqli_connect("", "", "", "bd_project");
+<?php
+//$link = mysqli_connect("localhost", "root", "", "bd_project");
 
 
 $connectstr_dbhost = '';
@@ -34,4 +33,61 @@ if (!$link) {
     exit;
 }
 
-$link->set_charset("utf8");
+$link->set_charset("utf8");	
+?>
+
+
+<?php
+
+if(isset($_SESSION["session_username"])){
+echo "<div id='right'>Вітаю, ";
+echo $_SESSION['session_username']; 
+echo " <a href='../logout.php'>Вийти </a></div>";
+}
+
+else{
+echo "<br> <br><b> Ви не авторизовані.</b> <br> <a href='../login.php'>Вхід</a> <a href='../register.php'>     Реєстрація</a>";
+exit();
+} 
+
+if(isset($_POST["login"])){
+
+if(!empty($_POST['username']) && !empty($_POST['password'])) {
+    $username=$_POST['username'];
+    $password=$_POST['password'];
+
+    $query =mysql_query("SELECT * FROM usertbl WHERE username='".$username."' AND password='".$password."'");
+
+    $numrows=mysql_num_rows($query);
+    if($numrows!=0)
+
+    {
+    while($row=mysql_fetch_assoc($query))
+    {
+    $dbusername=$row['username'];
+    $dbpassword=$row['password'];
+    }
+
+    if($username == $dbusername && $password == $dbpassword)
+
+    {
+
+// old placement
+//    session_start();
+    $_SESSION['session_username']=$username;
+
+    /* Redirect browser */
+    header("Location: intropage.php");
+    }
+    } else {
+//    $message = "Invalid username or password!";
+
+echo  "Invalid username or password!";
+    }
+
+} else {
+    $message = "All fields are required!";
+}
+}
+?>
+

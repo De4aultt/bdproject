@@ -1,5 +1,5 @@
 <?php
-include 'config.php';
+require_once 'config.php';
 ?>
 <h1>Майстерня картин:</h1>
 <a href="checks/list.php"><p><b>Чеки</b><br /></a>
@@ -10,3 +10,5 @@ include 'config.php';
 <a href="phone_numbers/list.php"><p><b>Номери телефонів</b><br /></a>
 <a href="pictures/list.php"><p><b>Картини</b><br /></a>
 
+</body>
+</html>
