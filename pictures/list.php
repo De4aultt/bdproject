@@ -1,12 +1,16 @@
 <?php
 include('../config.php'); 
 
-$myquery = "SELECT * FROM `Pictures`";
+$order_by = "Picture_id";
+if ($_GET['Order_by']){
+    $order_by = $_GET['Order_by'];
+}
+$myquery = "SELECT * FROM `pictures` ORDER BY `pictures`.`$order_by` ASC";
 
 echo "<table border=1 >"; 
 echo "<tr>"; 
 echo "<td><b><a href=list.php?Order_by='Picture_id'>Picture Id</a></b></td>"; 
-echo "<td><b>Date Made</b></td>"; 
+echo "<td><b><a href=list.php?Order_by='Date_made'>Date Made</a></b></td>"; 
 echo "<td><b>File</b></td>"; 
 echo "<td><b>Style</b></td>"; 
 echo "<td><b>Price</b></td>"; 
