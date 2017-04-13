@@ -18,13 +18,13 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
     $username=$_POST['username'];
     $password=$_POST['password'];
 
-    $query =mysql_query("SELECT * FROM usertbl WHERE username='".$username."' AND password='".$password."'");
+    $query =mysqli_query($link, "SELECT * FROM usertbl WHERE username='".$username."' AND password='".$password."'");
 
-    $numrows=mysql_num_rows($query);
+    $numrows=mysqli_num_rows($query);
     if($numrows!=0)
 
     {
-    while($row=mysql_fetch_assoc($query))
+    while($row=mysqli_fetch_assoc($query))
     {
     $dbusername=$row['username'];
     $dbpassword=$row['password'];
