@@ -9,5 +9,5 @@
 	
 </head> 
 	<body>
-            <a href='../index.php'><p><b>Головна сторінка</b></a>
+            <div id="left"><a href='../index.php'><p><b>Головна сторінка</b></a></div>
 
