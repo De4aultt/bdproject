@@ -2,9 +2,9 @@
 include('../config.php'); 
 
 $order_by = "Picture_id";
-if ($_GET['Order_by']){
-    $order_by = $_GET['Order_by'];
-}
+//if ($_GET['Order_by']){
+//    $order_by = $_GET['Order_by'];
+//}
 $myquery = "SELECT * FROM `pictures` ORDER BY `pictures`.`$order_by` ASC";
 
 echo "<table border=1 >"; 
