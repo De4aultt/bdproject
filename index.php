@@ -2,6 +2,7 @@
 require_once 'config.php';
 ?>
 <h1>Майстерня картин:</h1>
+<h1>Example</h1>
 <a href="checks/list.php"><p><b>Чеки</b><br /></a>
 <a href="clients/list.php"><p><b>Клієнти</b><br /></a>
 <a href="designers/list.php"><p><b>Дизайнери</b><br /></a>
