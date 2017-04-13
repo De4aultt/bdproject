@@ -57,44 +57,4 @@ echo "<br> <br><b> Ви не авторизовані.</b> <br> <a href='../logi
 exit();
 } 
 
-if(isset($_POST["login"])){
-
-if(!empty($_POST['username']) && !empty($_POST['password'])) {
-    $username=$_POST['username'];
-    $password=$_POST['password'];
-
-    $query =mysql_query("SELECT * FROM usertbl WHERE username='".$username."' AND password='".$password."'");
-
-    $numrows=mysql_num_rows($query);
-    if($numrows!=0)
-
-    {
-    while($row=mysql_fetch_assoc($query))
-    {
-    $dbusername=$row['username'];
-    $dbpassword=$row['password'];
-    }
-
-    if($username == $dbusername && $password == $dbpassword)
-
-    {
-
-// old placement
-//    session_start();
-    $_SESSION['session_username']=$username;
-    $_SESSION['position']=$username;
-    /* Redirect browser */
-    header("Location: intropage.php");
-    }
-    } else {
-//    $message = "Invalid username or password!";
-
-echo  "Invalid username or password!";
-    }
-
-} else {
-    $message = "All fields are required!";
-}
-}
-?>
 

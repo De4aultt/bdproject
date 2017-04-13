@@ -36,7 +36,7 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
 
 
     $_SESSION['session_username']=$username;
-
+    $_SESSION['session_position']=$username;
     /* Redirect browser */
     echo "<script>window.location = 'intropage.php';</script>";
     }
