@@ -1,12 +1,7 @@
 <?php
 $positions = array("Дизайнер", "Менеджер");
-$designer_pages = array("http://bdproject.azurewebsites.net/index.php",
-    "http://bdproject.azurewebsites.net/pictures/delete.php", 
-    "http://bdproject.azurewebsites.net/pictures/list.php",
-    "http://bdproject.azurewebsites.net/pictures/edit.php",
-    "http://bdproject.azurewebsites.net/pictures/new.php",
-    );
-
+$designer_pages = "http://bdproject.azurewebsites.net/pictures";
+$home = "http://bdproject.azurewebsites.net/index.php";
 
 if(isset($_SESSION["session_username"])){
 echo "<div id='right'>Вітаю, ";
@@ -20,7 +15,7 @@ function getUrl() {
   return $url;
 }    
  $current_page = getUrl();
- if ( !(in_array(strval($_SESSION["session_position"]), $positions)) || strval($_SESSION["session_position"]) == "Дизайнер" && !(in_array(strval($current_page), $designer_pages))){
+ if ( !(in_array(strval($_SESSION["session_position"]), $positions)) || strval($_SESSION["session_position"]) == "Дизайнер" && !stristr(strval($current_page), $designer_pages) && !(strval($current_page) != strval($home))){
     echo "<h1>Ваша посада '";
     echo $_SESSION["session_position"];
     echo "' не має доступу до даної категорії!</h1>";
