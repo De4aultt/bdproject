@@ -45,7 +45,7 @@ echo $_SESSION['session_username'];
 echo " <a href='../logout.php'>Вийти </a></div>";
 }
 
-if ($_SESSION["position"] != "1"){
+if (isset($_SESSION["position"])){
     echo "<h1>Ваша посада '";
     echo $_SESSION["position"];
     echo "' не має доступу до даної категорії!</h1>";
