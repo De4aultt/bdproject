@@ -26,7 +26,7 @@ if (!$link) {
     exit;
 }
 
-
+$link->set_charset("utf8");
 
 
 //$link = mysqli_connect("localhost", "root", "", "bdis_project");

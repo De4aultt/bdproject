@@ -29,6 +29,7 @@ if (!$link) {
     echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
     exit;
 }
+$link->set_charset("utf8");
 
 //$link = mysqli_connect("localhost", "root", "", "bdis_project");
 
