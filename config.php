@@ -2,6 +2,7 @@
 error_reporting(E_ALL); ini_set('display_errors', 1);
 session_start();
 include 'includes/header.php';
+include 'acsess_roots.php';
 ?>
 
 <?php
@@ -51,8 +52,7 @@ function getUrl() {
   return $url;
 }    
  $current_page = getUrl();
- $designer_pages = array("http://bdproject.azurewebsites.net/index.php");
-if (strval($_SESSION["session_position"]) == "Дизайнер" && !(in_array(strval($current_page), $designer_pages))){
+ if (strval($_SESSION["session_position"]) == "Дизайнер" && !(in_array(strval($current_page), $designer_pages))){
     echo "<h1>Ваша посада '";
     echo $_SESSION["session_position"];
     echo "' не має доступу до даної категорії!</h1>";
