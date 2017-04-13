@@ -28,6 +28,7 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
     {
     $dbusername=$row['username'];
     $dbpassword=$row['password'];
+    $dbposition=$row['position'];
     }
 
     if($username == $dbusername && $password == $dbpassword)
@@ -36,7 +37,7 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
 
 
     $_SESSION['session_username']=$username;
-    $_SESSION['session_position']=$username;
+    $_SESSION['session_position']=$dbposition;
     /* Redirect browser */
     echo "<script>window.location = 'intropage.php';</script>";
     }
