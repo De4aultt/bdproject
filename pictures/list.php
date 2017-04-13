@@ -11,10 +11,10 @@ echo "<table border=1 >";
 echo "<tr>"; 
 echo "<td><b><a href=list.php?Order_by=Picture_id>Picture Id</a></b></td>"; 
 echo "<td><b><a href=list.php?Order_by=Date_made>Date Made</a></b></td>"; 
-echo "<td><b>File</b></td>"; 
-echo "<td><b>Style</b></td>"; 
-echo "<td><b>Price</b></td>"; 
-echo "<td><b>Designer Pasport Number</b></td>"; 
+echo "<td><b><a href=list.php?Order_by=Date_made>File</a></b></td>"; 
+echo "<td><b><a href=list.php?Order_by=Style>Style</a></b></td>"; 
+echo "<td><b><a href=list.php?Order_by=Price>Price</a></b></td>"; 
+echo "<td><b><a href=list.php?Order_by=Designer_Pasport_Number>Designer Pasport Number</a></b></td>"; 
 echo "</tr>"; 
 $result = mysqli_query($link, $myquery) or trigger_error(mysqli_error($link)); 
 while($row = mysqli_fetch_array($result)){ 
