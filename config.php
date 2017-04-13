@@ -43,15 +43,15 @@ if(isset($_SESSION["session_username"])){
 echo "<div id='right'>Вітаю, ";
 echo $_SESSION['session_username']; 
 echo " <a href='../logout.php'>Вийти </a></div>";
-}
 
-if ($_SESSION["session_position"] != "1"){
+
+if (strval($_SESSION["session_position"]) != "1"){
     echo "<h1>Ваша посада '";
     echo $_SESSION["session_position"];
     echo "' не має доступу до даної категорії!</h1>";
     exit();
 }
-
+}
 else{
 echo "<br> <br><b> Ви не авторизовані.</b> <br> <a href='../login.php'>Вхід</a> <a href='../register.php'>     Реєстрація</a>";
 exit();
