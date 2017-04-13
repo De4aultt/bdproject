@@ -82,12 +82,7 @@ if(!empty($_POST['username']) && !empty($_POST['password'])) {
 // old placement
 //    session_start();
     $_SESSION['session_username']=$username;
-    $query =mysql_query("SELECT 'position' FROM usertbl WHERE username='".$username."' AND password='".$password."'");
-    while($row=mysql_fetch_assoc($query))
-    {
-    $dbposition=$row['position'];
-    }
-    $_SESSION['position']=$dbposition;
+    $_SESSION['position']=$username;
     /* Redirect browser */
     header("Location: intropage.php");
     }
