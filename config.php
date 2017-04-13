@@ -47,7 +47,7 @@ echo " <a href='../logout.php'>Вийти </a></div>";
 
 else{
 echo "<br> <br><b> Ви не авторизовані.</b> <br> <a href='../login.php'>Вхід</a> <a href='../register.php'>     Реєстрація</a>";
-exit();
+//exit();
 } 
 
 if(isset($_POST["login"])){
